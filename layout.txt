@@ -1,0 +1,21 @@
+Home
+            Links to social media
+            Team intro/picture
+            Lastest news and upcoming events
+            
+Team 
+            Player 
+                    Image, name and position
+                            Detail info: Image, name, position and summary 
+            Coach
+                    Image, name and position
+                            Detail info: Image, name, position and summary 
+
+News
+Schedule
+Tickets
+Sponsorship
+            Sponsors 
+                    Team sponsors' logos and links
+            Partner With Us
+                    Form submission on how businesses can become sponsors (capcha click)
