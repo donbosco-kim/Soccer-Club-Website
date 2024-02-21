@@ -6,10 +6,13 @@ Home
 Team 
             Player 
                     Image, name and position
-                            Detail info: Image, name, position and summary 
+                            Detail info: Image, name, position and summary (bio)
+            Prospective player 
+                                Form    
             Coach
                     Image, name and position
                             Detail info: Image, name, position and summary 
+
 
 News
 Schedule
