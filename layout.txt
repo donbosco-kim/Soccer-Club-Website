@@ -4,6 +4,7 @@ Home
             Lastest news and upcoming events
             
 Team 
+            Note: this is a dropdown page
             Player 
                     Image, name and position
                             Detail info: Image, name, position and summary (bio)
@@ -12,12 +13,11 @@ Team
             Coach
                     Image, name and position
                             Detail info: Image, name, position and summary 
-
-
 News
 Schedule
 Tickets
 Sponsorship
+            Note: this is a dropdown page
             Sponsors 
                     Team sponsors' logos and links
             Partner With Us

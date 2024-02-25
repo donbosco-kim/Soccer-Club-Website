@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const expressLayouts = require("express-ejs-layouts");
-//const expressStatic = require('express-static')
+const expressStatic = require('express-static')
 
 app.use(expressLayouts);
 app.set('layout', './layouts/layout')
@@ -22,7 +22,7 @@ app.get('/news', (req, res) => {
 })
 
 //static files
-//app.use(express.static("public"));
-//app.use("/css", express.static(__dirname + "../public/"));
+app.use(express.static('public'));
+app.use('/css', express.static(__dirname + '../public/CSS'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
