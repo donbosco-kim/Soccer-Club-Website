@@ -7,13 +7,14 @@ Team
             Note: this is a dropdown page
             Player 
                     Image, name and position
-                            Detail info: Image, name, position and summary (bio)
-            Prospective player 
-                                Form    
+                            Detail info: Image, name, position and summary (bio)  
             Coach
                     Image, name and position
                             Detail info: Image, name, position and summary 
 News
+
+Prospective player 
+                                Form  
 Schedule
 Tickets
 Sponsorship
