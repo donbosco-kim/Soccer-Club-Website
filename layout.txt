@@ -11,16 +11,30 @@ Team
             Coach
                     Image, name and position
                             Detail info: Image, name, position and summary 
+
 News
+        Articles : CRUD
 
 Prospective player 
-                        Form  
+                        Form  : Create
 
 Schedule
+
 Tickets
+
 Sponsorship
             Note: this is a dropdown page
             Sponsors 
-                    Team sponsors' logos and links
+                    Team sponsors' logos and links : Read
             Partner With Us
-                    Form submission on how businesses can become sponsors (capcha click)
+                    Form submission on how businesses can become sponsors (capcha click) : Create
+
+
+SQL Database: 
+-Admin: (firstname, lastname, username, password)
+-Player: Form(firstname, lastname, position, summary)
+-Coach: Form(firstname, lastname, position, summary)
+-Prospective player: Form((firstname, lastname, position, summary))
+-Sponsors: Form()
+-articles: 
+
