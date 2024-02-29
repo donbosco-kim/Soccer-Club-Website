@@ -1,11 +1,12 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 const expressLayouts = require("express-ejs-layouts");
-const expressStatic = require('express-static')
+const expressStatic = require('express-static');
+const db = require('./models/db'); 
 
 app.use(expressLayouts);
-app.set('layout', './layouts/layout')
+app.set('layout', './layouts/layout');
 app.set("view engine", "ejs");
 
 //routes
@@ -14,8 +15,17 @@ app.get('', (req, res) => {
 })
 
 app.get('/team', (req, res) => {
-    res.render('team', {title: 'Team Page', layout: './layouts/layout'})
-})
+    // Fetch team player data from the database
+    const sql = 'SELECT * FROM players'; 
+    db.query(sql, (err, results) => {
+      if (err) {
+        console.error('Error fetching team players:', err);
+        res.status(500).send('Internal Server Error');
+      } else {
+        res.render('team', { title: 'Team Page', layout: './layouts/layout', players: results });
+      }
+    });
+  });
 
 app.get('/news', (req, res) => {
     res.render('news', {title: 'News Page', layout: './layouts/layout'})

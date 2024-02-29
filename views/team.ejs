@@ -1,1 +1,7 @@
-<p>I am team page</p>
+<!-- team.ejs aka player Read -->
+<ul>
+  <% players.forEach(player => { %>
+    <li><%= player.name %> - <%= player.position %></li>
+  <% }); %>
+</ul>
+
