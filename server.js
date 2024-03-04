@@ -14,7 +14,7 @@ app.get('', (req, res) => {
     res.render('home', {title: 'Home Page', layout: './layouts/layout'})
 })
 
-app.get('/team', (req, res) => {
+app.get('/player', (req, res) => {
     // Fetch team player data from the database
     const sql = 'SELECT * FROM players'; 
     db.query(sql, (err, results) => {
@@ -22,7 +22,7 @@ app.get('/team', (req, res) => {
         console.error('Error fetching team players:', err);
         res.status(500).send('Internal Server Error');
       } else {
-        res.render('team', { title: 'Team Page', layout: './layouts/layout', players: results });
+        res.render('player', { title: 'Team Page', layout: './layouts/layout', players: results });
       }
     });
   });
