@@ -31,6 +31,10 @@ app.get('/news', (req, res) => {
     res.render('news', {title: 'News Page', layout: './layouts/layout'})
 })
 
+app.get('/signup', (req, res) => {
+  res.render('signup', {title: 'Signup Page', layout: './layouts/layout'})
+})
+
 //static files
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + '../public/CSS'));
