@@ -14,18 +14,18 @@ app.get('', (req, res) => {
     res.render('home', {title: 'Home Page', layout: './layouts/layout'})
 })
 
-app.get('/team', (req, res) => {
-    // Fetch team player data from the database
-    const sql = 'SELECT * FROM players'; 
-    db.query(sql, (err, results) => {
-      if (err) {
-        console.error('Error fetching team players:', err);
-        res.status(500).send('Internal Server Error');
-      } else {
-        res.render('team', { title: 'Team Page', layout: './layouts/layout', players: results });
-      }
-    });
-  });
+// app.get('/player', (req, res) => {
+//     // Fetch team player data from the database
+//     const sql = 'SELECT * FROM players'; 
+//     db.query(sql, (err, results) => {
+//       if (err) {
+//         console.error('Error fetching team players:', err);
+//         res.status(500).send('Internal Server Error');
+//       } else {
+//         res.render('player', { title: 'Team Page', layout: './layouts/layout', players: results });
+//       }
+//     });
+//   });
 
 app.get('/news', (req, res) => {
     res.render('news', {title: 'News Page', layout: './layouts/layout'})
