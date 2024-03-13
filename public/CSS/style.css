@@ -73,7 +73,7 @@ body {
 }
 
 .image-scroll-container {
-  margin-top: 10px;
+  
   overflow-x: auto;
   white-space: nowrap;
   display: flex;
@@ -81,16 +81,15 @@ body {
 }
 
 .image-scroll-container img {
-  width: 900px; /* Adjust the width as needed */
-  height: 500px;
-  margin-right: 10px; /* Adjust spacing between images */
+  width: 100%; /* Adjust the width as needed */
+  height: 90vh;
+  /* margin-right: 10px; Adjust spacing between images */
   
 }
 
 .three-columns-wrapper {
   width: 80%;
   margin: 0 auto; /* Center the wrapper */
-  margin-top: 20px; /* Add margin between the image scroll and three columns */
 }
 
 .three-columns {
@@ -102,6 +101,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 /* Set width and height for Result, Upcoming Games, and Articles boxes */
@@ -115,19 +115,7 @@ body {
   text-align: center; /* Center text horizontally */
 }
 
-/* Arrange the Articles boxes in a column */
-.articles-column {
-  display: flex;
-  flex-direction: column;
-}
-/* Adjust spacing between Result and Upcoming Games columns */
-.column:first-child {
-  margin-left: 10px;
-}
 
-.articles-box {
-  margin-bottom: 5px; /* Adjust spacing between article boxes */
-}
 
 
 
