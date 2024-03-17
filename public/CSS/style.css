@@ -137,6 +137,55 @@ a:focus {
   display: block; /* The image is treated as a block element */
   margin: 0 auto; /* Center the image horizontally within its container */
 }
+.homepage-section2-container {
+  display: flex;
+  justify-content: space-between; /* Ensure equal space between columns */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.column {
+  flex: 1; /* Equal width for both columns */
+  padding: 20px;
+  background-color: #f2f2f2; /* Example background color */
+  border-radius: 8px; /* Example border radius */
+}
+
+.column h2 {
+  text-align: center; /* Center-align heading */
+  margin-bottom: 15px; /* Example margin */
+}
+.column + .column {
+  margin-left: 20px; /* Space between columns */
+}
+
+.match-info {
+  display: flex;
+  flex-direction: column; /* Arrange date-time and team info vertically */
+}
+
+.date-time-info {
+  display: flex;
+  justify-content: space-between; /* Align date and time at start and end */
+  align-items: center; /* Center vertically */
+}
+
+.date-info,
+.time-info {
+  flex: 1;
+  text-align: center;
+}
+
+.team-info {
+  margin-top: 20px; /* Add space between date-time and team info */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-info img {
+  max-width: 50px;
+}
 /*home style end*/
 
 .content {
