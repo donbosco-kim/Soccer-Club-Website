@@ -126,6 +126,18 @@ a:focus {
 }
 
 /*Header style end*/
+/*home style*/
+.homepage-section-container {
+  margin-left: auto; /* Center the container horizontally */
+  margin-right: auto; /* Center the container horizontally */
+  width: fit-content; /* Ensure container width fits its content */
+}
+
+.homepage-section-container img {
+  display: block; /* The image is treated as a block element */
+  margin: 0 auto; /* Center the image horizontally within its container */
+}
+/*home style end*/
 
 .content {
   max-width: 600px;
