@@ -142,6 +142,7 @@ a:focus {
 .homepage-section2-container {
   display: flex;
   justify-content: space-between; /* Ensure equal space between columns */
+  margin-top: 20px;
   margin-left: 40px;
   margin-right: 40px;
 }
