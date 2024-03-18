@@ -136,6 +136,8 @@ a:focus {
 .homepage-section-container img {
   display: block; /* The image is treated as a block element */
   margin: 0 auto; /* Center the image horizontally within its container */
+  width: 1100px; /*set img width & height */
+  height: 550px;
 }
 .homepage-section2-container {
   display: flex;
