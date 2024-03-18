@@ -70,7 +70,7 @@ a:focus {
 }
 
 .logo img {
-  width: 130px;
+  width: 60px;
   height: auto;
 }
 
@@ -137,7 +137,7 @@ a:focus {
   display: block; /* The image is treated as a block element */
   margin: 0 auto; /* Center the image horizontally within its container */
   width: 1100px; /*set img width & height */
-  height: 550px;
+  height: 600px;
 }
 .homepage-section2-container {
   display: flex;
