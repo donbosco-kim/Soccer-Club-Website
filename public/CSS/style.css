@@ -215,6 +215,29 @@ a:focus {
 .teams {
   text-align: center;
 }
+
+.homepage-section3-container {
+  margin-left: auto; /* Center the container horizontally */
+  margin-right: auto; /* Center the container horizontally */
+  width: fit-content; /* Ensure container width fits its content */
+}
+.homepage-section3-container h2 {
+  text-align: center;
+}
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 1200px; /*table width*/
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 /*home style end*/
 
 .content {
