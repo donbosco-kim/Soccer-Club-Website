@@ -159,32 +159,59 @@ a:focus {
   margin-left: 20px; /* Space between columns */
 }
 
-.match-info {
+/* Styles for the Results column */
+
+.result-info {
   display: flex;
   flex-direction: column; /* Arrange date-time and team info vertically */
+  border: 1px solid #ccc;
+  margin-bottom: 20px; /* Add margin between result items */
 }
 
 .date-time-info {
   display: flex;
   justify-content: space-between; /* Align date and time at start and end */
   align-items: center; /* Center vertically */
+  padding: 10px;
 }
 
 .date-info,
 .time-info {
-  flex: 1;
   text-align: center;
+  flex: 1; /* Equal width for date and time */
 }
 
 .team-info {
-  margin-top: 20px; /* Add space between date-time and team info */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.team-info img {
+  max-width: 50px;
+}
+/* Styles for the Upcoming Matches column */
+.match {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.match-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.team-info img {
-  max-width: 50px;
+.match-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.teams {
+  text-align: center;
 }
 /*home style end*/
 
