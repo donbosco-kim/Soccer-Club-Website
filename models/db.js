@@ -1,20 +1,25 @@
-// const mysql = require('mysql2');
+// import the dependencies
+// import { readFileSync } from 'fs';
+const fs = require('fs');
+const sqlite3 = require('sqlite3').verbose();
 
-// const db = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: 'pass',
-//   database: 'SportsSites',
-//   port: '3306',
-// });
+//read the sql file
+const schema =fs.readFileSync('../models/schema.sql', 'utf-8');
 
-// // Connect to MySQL
-// db.connect((err) => {
-//   if (err) {
-//     console.error('Error connecting to MySQL:', err);
-//   } else {
-//     console.log('Connected to MySQL database');
-//   }
-// });
+//connect to the sqlite database file
+const db = new sqlite3.Database('../models/mizzousoccerdatabase.db');
 
-// module.exports = db;
+//execute the schema sql commands
+db.serialize(() => {
+    db.exec(schema, (err) => {
+        if(err) {
+            console.error('Error executing schema:', err);
+        }else {
+            console.log('Database schema created successfully');
+        }
+    });
+});
+
+//close the database connection
+db.close();
+
