@@ -150,13 +150,13 @@ a:focus {
 .column {
   flex: 1; /* Equal width for both columns */
   padding: 20px;
-  background-color: #f2f2f2; /* Example background color */
-  border-radius: 8px; /* Example border radius */
+  background-color: #f2f2f2; /* background color */
+  border-radius: 8px; /* border radius */
 }
 
 .column h2 {
   text-align: center; /* Center-align heading */
-  margin-bottom: 15px; /* Example margin */
+  margin-bottom: 15px; /* margin */
 }
 .column + .column {
   margin-left: 20px; /* Space between columns */
