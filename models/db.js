@@ -13,7 +13,7 @@ const db = new sqlite3.Database('../models/mizzousoccerdatabase.db');
 db.serialize(() => {
     db.exec(schema, (err) => {
         if(err) {
-            console.error('Error executing schema:', err);
+            console.error('Error executing schema:', err.message);
         }else {
             console.log('Database schema created successfully');
         }
@@ -21,5 +21,11 @@ db.serialize(() => {
 });
 
 //close the database connection
-db.close();
+db.close((err) => {
+    if(err) {
+        console.error('Unable to close the database connection:', err.message);
+    }else {
+        console.log('Database connection is closed');
+    }
+});
 
