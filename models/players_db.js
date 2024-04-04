@@ -1,15 +1,17 @@
+// import necessary modules
+const sqlite3 = require("sqlite3").verbose();
+
 // Function to open a connection to the database file
 function getDbConnection() {
-  const sqlite3 = require("sqlite3").verbose();
   // Connecting to the database
-  let db = new sqlite3.Database("mizzousoccerdatabase.db",sqlite3.OPEN_READWRITE,(err) => {
+  let db = new sqlite3.Database("models/mizzousoccerdatabase.db",sqlite3.OPEN_READWRITE, (err) => {
       if (err) {
-        console.error(err.message);
+        console.error("You got this", err.message);
+      }else {
+        console.log("Connected to the database.");
       }
-      console.log("Connected to the database.");
-    }
-  );
-  return db; // Return the database connection
+    });
+    return db; // Return the database connection
 }
 
 //View (Read)
@@ -17,22 +19,22 @@ function getDbConnection() {
 function getAllPlayers(callback) {
   // Get a db connection
   let db = getDbConnection();
-  let sql = "SELECT * FROM Players";
+  let sql = 'SELECT * FROM Players';
   db.all(sql, [], (err, results) => {
-    if (err) {
-      console.error(err.message);
-      callback(err, null); // Pass error to callback
-    } else {
-      // Close the database connection after retrieving results
-      db.close((closeErr) => {
-        if (closeErr) {
-          console.error(closeErr.message);
-        } else {
-          console.log("Database connection is closed");
-        }
-      });
-      callback(null, results); // Pass results to callback
-    }
+      if (err) {
+          console.error(err.message);
+          callback(err, null); // Pass error to callback
+      } else {
+          // Close the database connection after retrieving results
+          db.close((closeErr) => {
+              if (closeErr) {
+                  console.error(closeErr.message);
+              } else {
+                  console.log('Database connection is closed');
+              }
+          });
+          callback(null, results); // Pass results to callback
+      }
   });
 }
 
@@ -58,20 +60,16 @@ function getAllPlayers(callback) {
 
 //Delete
 // Usage example:
-getAllPlayers((err, players) => {
-    if (err) {
-        console.error('Error retrieving players:', err);
-    } else {
-        // Do something with the players array
-        console.log(players);
-    }
-});
-
-//close the database connection
-// db.close((err) => {
-//   if (err) {
-//     console.error(err.message);
-//   } else {
-//     console.log("Database connection is closed");
-//   }
+// getAllPlayers((err, players) => {
+//     if (err) {
+//         console.error('Error retrieving players:', err);
+//     } else {
+//         // Do something with the players array
+//         console.log(players);
+//     }
 // });
+
+// Export the getAllPlayers function
+module.exports = {
+  getAllPlayers: getAllPlayers
+};
