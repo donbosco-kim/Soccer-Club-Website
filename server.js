@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const expressLayouts = require("express-ejs-layouts");
 const expressStatic = require('express-static');
-const db = require('./models/db'); 
+const db = require('./models/players_db'); 
 
 app.use(expressLayouts);
 app.set('layout', './layouts/layout');
