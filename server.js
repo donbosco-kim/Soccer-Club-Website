@@ -16,14 +16,16 @@ app.get('', (req, res) => {
 
 // app.get('/player', (req, res) => {
 //     // Fetch team player data from the database
-//     const sql = 'SELECT * FROM players'; 
-//     db.query(sql, (err, results) => {
+//     const sql = 'SELECT * FROM Players'; 
+//     db.all(sql, [], (err, results) => {
 //       if (err) {
-//         console.error('Error fetching team players:', err);
-//         res.status(500).send('Internal Server Error');
-//       } else {
-//         res.render('player', { title: 'Team Page', layout: './layouts/layout', players: results });
+//         console.error('Error fetching team players:', err.message);
 //       }
+//       results.forEach((result) => {
+//         console.log('Players:',results);
+//         //res.render('player', { title: 'Team Page', layout: './layouts/layout', players: result });
+//       });
+      
 //     });
 //   });
 
