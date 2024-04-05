@@ -15,11 +15,11 @@ function getDbConnection() {
 }
 
 //View (Read)
-// Function to get all players
-function getAllPlayers(callback) {
+// Function to get all coach
+function getAllCoach(callback) {
   // Get a db connection
   let db = getDbConnection();
-  let sql = 'SELECT * FROM Players';
+  let sql = 'SELECT * FROM Coach';
   db.all(sql, [], (err, results) => {
       if (err) {
           console.error(err.message);
@@ -38,17 +38,19 @@ function getAllPlayers(callback) {
   });
 }
 
-//Create
+//Create test
+// let db = getDbConnection();
 
-// let sql = 'INSERT INTO Players (firstname, lastname, birthdate, position, jerseynumber, height, weight) VALUES (?,?,?,?,?,?,?)';
-// db.run(sql, ["Joe", "Test", "3/3/1998", "Midfielder", 13, 190, 130], (err) => {
+// let sql = 'INSERT INTO Coach (firstname, lastname) VALUES (?,?)';
+// db.run(sql, ["Jonah", "Test"], (err) => {
 //     if (err) {
 //         console.error(err.message);
 //     }
-//     console.log("Players successfully added");
+//     console.log("Coach successfully added");
 // });
 
-// Export the getAllPlayers function
+
+// Export the getAllCoach function
 module.exports = {
-  getAllPlayers: getAllPlayers
-};
+    getAllCoach: getAllCoach
+  };
