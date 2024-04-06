@@ -15,6 +15,10 @@ app.get("", (req, res) => {
   res.render("home", { title: "Home Page", layout: "./layouts/layout" });
 });
 
+app.get("/login-signup", (req, res) => {
+  res.render("login-signup", { title: "Login/Signup Page", layout: false });
+});
+
 app.get("/player", (req, res) => {
   // Fetch team player data from the database
   player.getAllPlayers((err, result) => {
@@ -51,12 +55,12 @@ app.get("/news", (req, res) => {
   res.render("news", { title: "News Page", layout: "./layouts/layout" });
 });
 
-app.get("/signup", (req, res) => {
-  res.render("signup", { title: "Signup Page", layout: "./layouts/layout" });
+app.get("/prospectiveplayer", (req, res) => {
+  res.render("prospectiveplayer", { title: "Prospective Player Page", layout: "./layouts/layout" });
 });
 
 //static files
 app.use(express.static("public"));
-app.use("/css", express.static(__dirname + "../public/CSS"));
+app.use("/css", express.static(__dirname + "../public/CSS/style.css"));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
