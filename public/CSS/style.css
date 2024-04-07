@@ -62,15 +62,20 @@ a:focus {
 }
 
 .header-lower {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(88, 80, 80, 0.9);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px; /* Adjust padding as needed */
+  /*height: 150px;*/
 }
 
-.logo img {
-  width: 60px;
+.logo svg {
+  width: 180px;
+  height: auto;
+}
+div .logo {
+  width: 180px;
   height: auto;
 }
 
