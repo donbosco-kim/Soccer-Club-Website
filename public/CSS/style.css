@@ -67,17 +67,17 @@ a:focus {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px; /* Adjust padding as needed */
-  /*height: 150px;*/
+  height: 100px;
 }
 
 .logo svg {
   width: 180px;
   height: auto;
 }
-div .logo {
+/* div .logo {
   width: 180px;
   height: auto;
-}
+} */
 
 .navbar ul {
   list-style-type: none;
