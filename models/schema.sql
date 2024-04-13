@@ -7,7 +7,7 @@ CREATE TABLE Users (
     password TEXT NOT NULL,
     role TEXT DEFAULT 'user' CHECK (role IN ('user', 'admin')),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 DROP TABLE IF EXISTS Coach;
 
@@ -15,7 +15,7 @@ CREATE TABLE Coach (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     firstname TEXT NOT NULL,
     lastname TEXT NOT NULL
-)
+);
 
 DROP TABLE IF EXISTS Players;
 
@@ -28,7 +28,7 @@ CREATE TABLE Players (
     jerseynumber INTEGER NOT NULL,
     height TEXT NOT NULL,
     weight TEXT NOT NULL
-)
+);
 
 DROP TABLE IF EXISTS Articles;
 
@@ -37,7 +37,7 @@ CREATE TABLE Articles (
     title TEXT NOT NULL,
     content TEXT NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 DROP TABLE IF EXISTS ProspectivePlayer;
 
@@ -52,7 +52,7 @@ CREATE TABLE ProspectivePlayer (
     height TEXT NOT NULL,
     weight TEXT NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 --Purchase tables
 DROP TABLE IF EXISTS Tickets;
@@ -64,7 +64,7 @@ CREATE TABLE Tickets (
     ticket_quantity INTEGER NOT NULL,
     ticket_description TEXT,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 DROP TABLE IF EXISTS Products;
 
@@ -75,7 +75,7 @@ CREATE TABLE Products (
     product_quantity INTEGER NOT NULL,
     product_description TEXT,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 DROP TABLE IF EXISTS Orders;
 
@@ -86,7 +86,7 @@ CREATE TABLE Orders (
     order_status TEXT NOT NULL DEFAULT '' CHECK(order_status IN ('pendding', 'completed', 'cancelled')), -- 'pending', 'completed', 'cancelled'
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES Users(id)
-)
+);
 
 DROP TABLE IF EXISTS OrderItems;
 
@@ -99,4 +99,4 @@ CREATE TABLE OrderItems (
     FOREIGN KEY (order_id) REFERENCES Orders(id),
     FOREIGN KEY (product_id) REFERENCES Tickets(id),
     FOREIGN KEY (product_id) REFERENCES Products(id)
-)
+);
