@@ -13,7 +13,6 @@ function getDbConnection() {
     });
     return db; // Return the database connection
 }
-
 //View (Read)
 // Function to get all players
 function getAllPlayers(callback) {
@@ -25,28 +24,12 @@ function getAllPlayers(callback) {
           console.error(err.message);
           callback(err, null); // Pass error to callback
       } else {
-          // Close the database connection after retrieving results
-          db.close((closeErr) => {
-              if (closeErr) {
-                  console.error(closeErr.message);
-              } else {
-                  console.log('Database connection is closed');
-              }
-          });
+          // Close the database connection
+          db.close();
           callback(null, results); // Pass results to callback
       }
   });
 }
-
-//Create
-
-// let sql = 'INSERT INTO Players (firstname, lastname, birthdate, position, jerseynumber, height, weight) VALUES (?,?,?,?,?,?,?)';
-// db.run(sql, ["Joe", "Test", "3/3/1998", "Midfielder", 13, 190, 130], (err) => {
-//     if (err) {
-//         console.error(err.message);
-//     }
-//     console.log("Players successfully added");
-// });
 
 // Export the getAllPlayers function
 module.exports = {

@@ -5,10 +5,15 @@ const expressLayouts = require("express-ejs-layouts");
 const expressStatic = require("express-static");
 const player = require("./models/players_db");
 const coach = require("./models/coach_db");
+const user = require("./models/users");
 
 app.use(expressLayouts);
 app.set("layout", "./layouts/layout");
 app.set("view engine", "ejs");
+
+//middleware to parse form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //routes
 app.get("", (req, res) => {
@@ -17,6 +22,33 @@ app.get("", (req, res) => {
 
 app.get("/login-signup", (req, res) => {
   res.render("login-signup", { title: "Login/Signup Page", layout: false });
+});
+
+app.post("/login-signup", (req, res) => {
+  //fields from login-signup.ejs
+  const {email, password} = req.body;
+  //check if these input matches the ones in the database
+  //if match then redirect to homepage
+  //otherwise stay in the same page
+});
+
+app.post("/login-signup", (req, res) => {
+  const { username, email, password, role } = req.body;
+  //validate data input
+  //sanitize them
+  //check if role is valid
+  if (role !== 'user' && role !== 'admin') {
+      return res.status(400).send("Invalid role");
+  }
+
+  //save user data to database
+  user.createUser(username, email, password, role, (err) => {
+      if (err) {
+          console.error(err);
+          return res.status(500).send("Error creating user");
+      }
+      res.redirect("/login-signup");
+  });
 });
 
 app.get("/player", (req, res) => {
