@@ -7,6 +7,8 @@ This is a capstone project made by team 10 (Matthew Hartmann, Noah Reeves, Downi
 ## Backend
 
 ## Server (hosting & Domain)
+Add a documentation for using AWS hosting (In Progress)
+- [Hosting](/docs/server-hosting.md)
 
 ## Documentation
 
