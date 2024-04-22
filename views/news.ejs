@@ -1,30 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <style>
+        body {
+            font-family: 'Clarendon', serif;
+        }
+
+        .banner {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+        .news-strip {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 80px;
+            text-align: left;
+            padding-left: 20px;
+            vertical-align: middle;
+        }
+        .latest-news {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(495px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .news-article {
+            width: 100%;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .news-article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .news-article h2 {
+            color: #333;
+        }
+        .news-article p {
+            margin-top: 10px;
+            color: #555;
+        }
+        .news-article .author {
+            margin-top: 20px;
+            color: #777;
+        }
+        .articles {
+            font-size: 50px;
+            padding-left: 25px;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="banner">
+    <div class="news-strip">News</div>
+</header>
+
+<header class="articles">
+    <div class="articles">Articles</div>
+</header>
+
 <section class="latest-news">
     <div class="news-article">
         <h2>Placeholder Article 1</h2>
-            <body>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel justo ligula. Sed dapibus odio a justo ultricies, eget bibendum dui vestibulum. Quisque euismod, enim nec dapibus ultrices, justo lacus pellentesque justo, sit amet facilisis leo purus vitae leo. Duis eget efficitur mauris. Vivamus feugiat quam nec nisi bibendum, id ultrices ex sodales. Sed quis purus eget ex volutpat dictum. Aliquam auctor sit amet est sed lobortis. Donec ut convallis neque, at ultricies leo. Integer nec elit sed velit ultricies fermentum ac id nulla. Maecenas ultrices sodales ante, at consequat lectus accumsan sed.
-
-                Nulla facilisi. Cras sed semper justo, sit amet varius purus. Fusce ullamcorper purus vel nulla ultricies, ac eleifend mauris blandit. Vestibulum vehicula nisl at lorem interdum, in ullamcorper purus aliquam. Nulla facilisi. Mauris ac ullamcorper nisi, nec convallis purus. Nulla consectetur odio quis mauris rutrum, ac tristique quam rutrum. Nullam sed purus in tortor consequat elementum in nec justo. Sed dapibus erat nec nulla lobortis, ut mattis justo sodales. Curabitur auctor nibh id sem facilisis, ac lobortis libero facilisis. Ut nec feugiat libero. Suspendisse tincidunt nec nulla vitae tempus.
-                </body>
+        <img src="/images/placeholder.png" alt="placeholderImage">
+        <p>Date: January 1, 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p class="author">Author: John Doe</p>
     </div>
     <div class="news-article">
-        <h2>Placeholder Article 2</h2>
-            <body>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel justo ligula. Sed dapibus odio a justo ultricies, eget bibendum dui vestibulum. Quisque euismod, enim nec dapibus ultrices, justo lacus pellentesque justo, sit amet facilisis leo purus vitae leo. Duis eget efficitur mauris. Vivamus feugiat quam nec nisi bibendum, id ultrices ex sodales. Sed quis purus eget ex volutpat dictum. Aliquam auctor sit amet est sed lobortis. Donec ut convallis neque, at ultricies leo. Integer nec elit sed velit ultricies fermentum ac id nulla. Maecenas ultrices sodales ante, at consequat lectus accumsan sed.
-
-                Nulla facilisi. Cras sed semper justo, sit amet varius purus. Fusce ullamcorper purus vel nulla ultricies, ac eleifend mauris blandit. Vestibulum vehicula nisl at lorem interdum, in ullamcorper purus aliquam. Nulla facilisi. Mauris ac ullamcorper nisi, nec convallis purus. Nulla consectetur odio quis mauris rutrum, ac tristique quam rutrum. Nullam sed purus in tortor consequat elementum in nec justo. Sed dapibus erat nec nulla lobortis, ut mattis justo sodales. Curabitur auctor nibh id sem facilisis, ac lobortis libero facilisis. Ut nec feugiat libero. Suspendisse tincidunt nec nulla vitae tempus.
-                </body>
+        <h2>Placeholder Article 1</h2>
+        <img src="/images/placeholder.png" alt="placeholderImage">
+        <p>Date: January 1, 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p class="author">Author: John Doe</p>
     </div>
     <div class="news-article">
-        <h2>Placeholder Article 3</h2>
-            <body>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel justo ligula. Sed dapibus odio a justo ultricies, eget bibendum dui vestibulum. Quisque euismod, enim nec dapibus ultrices, justo lacus pellentesque justo, sit amet facilisis leo purus vitae leo. Duis eget efficitur mauris. Vivamus feugiat quam nec nisi bibendum, id ultrices ex sodales. Sed quis purus eget ex volutpat dictum. Aliquam auctor sit amet est sed lobortis. Donec ut convallis neque, at ultricies leo. Integer nec elit sed velit ultricies fermentum ac id nulla. Maecenas ultrices sodales ante, at consequat lectus accumsan sed.
-
-                Nulla facilisi. Cras sed semper justo, sit amet varius purus. Fusce ullamcorper purus vel nulla ultricies, ac eleifend mauris blandit. Vestibulum vehicula nisl at lorem interdum, in ullamcorper purus aliquam. Nulla facilisi. Mauris ac ullamcorper nisi, nec convallis purus. Nulla consectetur odio quis mauris rutrum, ac tristique quam rutrum. Nullam sed purus in tortor consequat elementum in nec justo. Sed dapibus erat nec nulla lobortis, ut mattis justo sodales. Curabitur auctor nibh id sem facilisis, ac lobortis libero facilisis. Ut nec feugiat libero. Suspendisse tincidunt nec nulla vitae tempus.
-                </body>
+        <h2>Placeholder Article 1</h2>
+        <img src="/images/placeholder.png" alt="placeholderImage">
+        <p>Date: January 1, 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p class="author">Author: John Doe</p>
     </div>
     <div class="news-article">
-        <h2>Placeholder Article 4</h2>
-            <body>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel justo ligula. Sed dapibus odio a justo ultricies, eget bibendum dui vestibulum. Quisque euismod, enim nec dapibus ultrices, justo lacus pellentesque justo, sit amet facilisis leo purus vitae leo. Duis eget efficitur mauris. Vivamus feugiat quam nec nisi bibendum, id ultrices ex sodales. Sed quis purus eget ex volutpat dictum. Aliquam auctor sit amet est sed lobortis. Donec ut convallis neque, at ultricies leo. Integer nec elit sed velit ultricies fermentum ac id nulla. Maecenas ultrices sodales ante, at consequat lectus accumsan sed.
-
-                Nulla facilisi. Cras sed semper justo, sit amet varius purus. Fusce ullamcorper purus vel nulla ultricies, ac eleifend mauris blandit. Vestibulum vehicula nisl at lorem interdum, in ullamcorper purus aliquam. Nulla facilisi. Mauris ac ullamcorper nisi, nec convallis purus. Nulla consectetur odio quis mauris rutrum, ac tristique quam rutrum. Nullam sed purus in tortor consequat elementum in nec justo. Sed dapibus erat nec nulla lobortis, ut mattis justo sodales. Curabitur auctor nibh id sem facilisis, ac lobortis libero facilisis. Ut nec feugiat libero. Suspendisse tincidunt nec nulla vitae tempus.
-                </body>
+        <h2>Placeholder Article 1</h2>
+        <img src="/images/placeholder.png" alt="placeholderImage">
+        <p>Date: January 1, 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p class="author">Author: John Doe</p>
+    </div>
+    <div class="news-article">
+        <h2>Placeholder Article 1</h2>
+        <img src="/images/placeholder.png" alt="placeholderImage">
+        <p>Date: January 1, 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p class="author">Author: John Doe</p>
+    </div>
+    <div class="news-article">
+        <h2>Placeholder Article 1</h2>
+        <img src="/images/placeholder.png" alt="placeholderImage">
+        <p>Date: January 1, 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p class="author">Author: John Doe</p>
+    </div>
+    <div class="news-article">
+        <h2>Placeholder Article 1</h2>
+        <img src="/images/placeholder.png" alt="placeholderImage">
+        <p>Date: January 1, 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p class="author">Author: John Doe</p>
+    </div>
+    <div class="news-article">
+        <h2>Placeholder Article 1</h2>
+        <img src="/images/placeholder.png" alt="placeholderImage">
+        <p>Date: January 1, 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p class="author">Author: John Doe</p>
     </div>
 </section>
+
+</body>
+</html>

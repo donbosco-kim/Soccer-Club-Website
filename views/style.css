@@ -36,7 +36,6 @@ a:focus {
   clear: both;
 }
 
-/* Header styles */
 .header-upper {
   background: black;
 }
@@ -66,7 +65,7 @@ a:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px; /* Adjust padding as needed */
+  padding: 10px 20px;
 }
 
 .logo img {
@@ -307,7 +306,7 @@ button[type="submit"]:hover {
   height: 1.5in;
   background-color: black;
   color: white;
-  text-align: center;
+  text-align: left;
   line-height: 1.5in;
 }
 
