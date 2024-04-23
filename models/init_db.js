@@ -4,10 +4,10 @@ const fs = require('fs');
 const sqlite3 = require('sqlite3').verbose();
 
 //read the sql file
-const schema =fs.readFileSync('models/schema.sql', 'utf-8');
+const schema =fs.readFileSync('schema.sql', 'utf-8');
 
 //set up the database connection
-const db = new sqlite3.Database('./models/mizzousoccerdatabase.db');
+const db = new sqlite3.Database('/Users/leonbosco/Desktop/Sqlite-Mizzou-SoccerDB/mizzousoccerdatabase.db');
 
 //execute the schema sql commands
 db.serialize(() => {

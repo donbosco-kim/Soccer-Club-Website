@@ -24,31 +24,39 @@ app.get("/login-signup", (req, res) => {
   res.render("login-signup", { title: "Login/Signup Page", layout: false });
 });
 
-app.post("/login-signup", (req, res) => {
-  //fields from login-signup.ejs
-  const {email, password} = req.body;
-  //check if these input matches the ones in the database
-  //if match then redirect to homepage
-  //otherwise stay in the same page
+// Route for user login
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+
+  // Check if the provided credentials are valid
+  user.getUser(username, password, (err, user) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Error authenticating user");
+    }else if (!user) {
+      // Authentication failed
+      return res.status(401).send("Incorrect username or password");
+    }else {
+      // Authentication successful, redirect to the homepage or dashboard
+      res.redirect("/");
+    }
+  });
 });
-
-app.post("/login-signup", (req, res) => {
-  const { username, email, password, role } = req.body;
-  //validate data input
-  //sanitize them
-  //check if role is valid
-  if (role !== 'user' && role !== 'admin') {
-      return res.status(400).send("Invalid role");
-  }
-
-  //save user data to database
-  user.createUser(username, email, password, role, (err) => {
+// Route for user signup
+app.post("/signup", (req, res) => {
+  const { username, email, password, confirmPassword } = req.body;
+  if (password !== confirmPassword) {
+    return res.status(400).send("Password does not match");
+  } else {
+    //save user data to database
+    user.createUser(username, email, password, (err) => {
       if (err) {
-          console.error(err);
-          return res.status(500).send("Error creating user");
+        console.error(err);
+        return res.status(500).send("Error creating user");
       }
       res.redirect("/login-signup");
-  });
+    });
+  }
 });
 
 app.get("/player", (req, res) => {
@@ -88,7 +96,10 @@ app.get("/news", (req, res) => {
 });
 
 app.get("/prospectiveplayer", (req, res) => {
-  res.render("prospectiveplayer", { title: "Prospective Player Page", layout: "./layouts/layout" });
+  res.render("prospectiveplayer", {
+    title: "Prospective Player Page",
+    layout: "./layouts/layout",
+  });
 });
 
 //static files
