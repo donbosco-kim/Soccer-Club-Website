@@ -58,6 +58,18 @@ passport.use(new LocalStrategy(function verify(username, password, cb) {
   });
 }));
 
+passport.serializeUser(function(user, cb) {
+  process.nextTick(function() {
+    cb(null, { id: user.id, username: user.username });
+  });
+});
+
+passport.deserializeUser(function(user, cb) {
+  process.nextTick(function() {
+    return cb(null, user);
+  });
+});
+
 function getUser(username, password, cb) {
   let db = getDbConnection();
   let sql = 'SELECT * FROM Users WHERE username = ?';
