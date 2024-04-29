@@ -2,10 +2,10 @@ DROP TABLE IF EXISTS Users;
 
 CREATE TABLE Users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT NOT NULL,
+    username TEXT NOT NULL UNIQUE,
     email TEXT NOT NULL UNIQUE,
-    password TEXT NOT NULL,
-    role TEXT DEFAULT 'user' CHECK (role IN ('user', 'admin')),
+    hashed_password BLOB,
+    salt BLOB,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -23,11 +23,11 @@ CREATE TABLE Players (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     firstname TEXT NOT NULL,
     lastname TEXT NOT NULL,
-    birthdate DATE NOT NULL,
     position TEXT NOT NULL,
     jerseynumber INTEGER NOT NULL,
-    height TEXT NOT NULL,
-    weight TEXT NOT NULL
+    class TEXT NOT NULL,
+    major TEXT NOT NULL,
+    bio TEXT NOT NULL
 );
 
 DROP TABLE IF EXISTS Articles;
@@ -39,6 +39,17 @@ CREATE TABLE Articles (
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+DROP TABLE IF EXISTS Schedules;
+
+CREATE TABLE Schedules (
+    match_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date_unix INTEGER NOT NULL,
+    time_unix INTEGER NOT NULL,
+    opponent TEXT NOT NULL,
+    location TEXT NOT NULL,
+    result TEXT NOT NULL
+);
+
 DROP TABLE IF EXISTS ProspectivePlayer;
 
 CREATE TABLE ProspectivePlayer (
@@ -48,9 +59,9 @@ CREATE TABLE ProspectivePlayer (
     birthdate DATE NOT NULL,
     email TEXT NOT NULL,
     position TEXT NOT NULL,
-    attend_mizzou TEXT NOT NULL DEFAULT '' CHECK(attend_mizzou IN ('Yes', 'No', 'Have Not Applied')), --Yes, No, Have Not Applied
-    height TEXT NOT NULL,
-    weight TEXT NOT NULL,
+    attend_mizzou TEXT NOT NULL,
+    height REAL NOT NULL,
+    weight REAL NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -83,7 +94,7 @@ CREATE TABLE Orders (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
     total_amount REAL NOT NULL,
-    order_status TEXT NOT NULL DEFAULT '' CHECK(order_status IN ('pendding', 'completed', 'cancelled')), -- 'pending', 'completed', 'cancelled'
+    order_status TEXT NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES Users(id)
 );
