@@ -51,3 +51,24 @@ window.onclick = function(event) {
   }
 }
 
+//prospective player script
+function enableSubmitBtn() {
+  document.getElementById('submitBtn').disabled = false;
+}
+
+function disableSubmitBtn() {
+  document.getElementById('submitBtn').disabled = true;
+}
+
+function onSubmit(token) {
+  enableSubmitBtn();
+}
+
+function validateCaptcha() {
+  const response = grecaptcha.getResponse();
+  if (response.length === 0) {
+      disableSubmitBtn();
+  } else {
+      enableSubmitBtn();
+  }
+}
