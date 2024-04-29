@@ -22,3 +22,32 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+//Admin Page Script
+$(document).ready(function() {
+  $('a[href="/addplayer"]').click(function(e) {
+      e.preventDefault(); // Prevent the default behavior of the link
+      $('.content').load('/addplayer'); // Load the content of addplayer.ejs into the .content div
+  });
+
+  $('a[href="/addcoach"]').click(function(e) {
+      e.preventDefault();
+      $('.content').load('/addcoach');
+  });
+});
+
+function myFunction() {
+  document.getElementById("myDropup").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropup-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+          }
+      }
+  }
+}
+
