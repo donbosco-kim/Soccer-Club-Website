@@ -62,3 +62,241 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* home style */
+/* home style */
+/* home style */
+/* home style */
+/* home style */
+
+body, html {
+ 
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  
+}
+
+
+
+.schedule-section {
+  display: flex;
+  justify-content: space-between; /* For even spacing */
+  padding: 10px; /* Adjust as needed */
+  background-color: #F1B82D; /* Yellow background */
+  font-weight: bold;
+  width: 98.61%;
+  height: auto;
+  padding-bottom: 80px;
+ 
+}
+
+.match-card {
+  flex: 1;
+  background-color: transparent; /* Yellow background */
+  padding: 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  position: relative; /* Needed for absolute positioning */
+}
+
+.match-date {
+  text-align: left;
+  margin-bottom: 0px; /* Space below the date */
+  margin-left: -6px;
+  font-size: medium;
+}
+
+.match-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding-left: 20px; /* Align with the vertical line */
+  font-size: small;
+}
+
+.match-info {
+  text-align: left;
+  margin-right: 40px;
+  margin-left: -20px;
+}
+
+.match-time {
+  font-size: smaller;
+  text-align: right;
+  margin-left: 10px;
+}
+
+/* The vertical line */
+.match-card::before {
+  content: '';
+  position: absolute;
+  left: 15px; /* Aligns with the padding of match-details */
+  top: 45px;
+  bottom: 5px;
+  width: 1px; /* Thin line */
+  background-color: grey;
+}
+
+/* The horizontal line */
+.match-details::after {
+  content: '';
+  position: absolute;
+  left: 24px; /* Align with the padding of match-details */
+  right: 20px; /* Spacing from the right */
+  top: 50%; /* Position it after the "Regular Season" and "7:30pm" */
+  border-top: 1px solid grey;
+}
+
+.match-teams {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px; /* Spacing from the horizontal line */
+  margin-left: 20px;
+  font-size: small;
+
+}
+
+.team {
+  text-align: left;
+}
+
+.location {
+  text-align: left;
+  position: absolute;
+  left: 20px;
+  bottom: 0px;
+  font-size: small;
+}
+#main-content {
+  padding: 20px; /* Adds padding inside the section for spacing */
+  background-color: #ffffff; /* White background for main content area */
+  color: #333; /* Dark text for better readability */
+  font-size: 16px; /* Set a reasonable font size */
+  margin-top: 20px; /* Adds space above the section */
+  
+}
+#overlay-image {
+position: absolute;  /* Absolutely position the image */
+bottom: 100%;  /* Position it at the bottom of the main-content section */
+left: 50%;  /* Center the image horizontally */
+transform: translate(-110%, 200%);  /* Adjust positioning to center and move up */
+width: 41%;  /* Adjust width as needed */
+height: auto;  /* Adjust height as needed */
+z-index: 10;  /* Ensure it's above other content */
+box-shadow: 0 0 8px rgba(0,0,0,0.4); /* Subtle fading border effect */
+border-radius: 5px;
+
+}
+#overlay-image2 {
+position: absolute;  /* Absolutely position the image */
+bottom: 100%;  /* Position it at the bottom of the main-content section */
+left: 50%;  /* Center the image horizontally */
+transform: translate(50%, 247%);  /* Adjust positioning to center and move up */
+width: 30%;  /* Adjust width as needed */
+height: auto;  /* Adjust height as needed */
+z-index: 10;  /* Ensure it's above other content */
+
+
+}
+.positioning-container {
+position: relative;
+height: 100%; /* Example height */
+width: 100%; /* Example width */
+}
+.button-container {
+position: absolute;
+top: 50%;  /* Center vertically */
+left: 50%; /* Center horizontally */
+transform: translate(0%, -20%); /* Adjust to center exactly */
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+
+.box-button {
+float:right;
+background-color: black;
+color: white;
+padding: 20px;
+text-align: left;
+border-radius: 10px;
+font-family: 'Times New Roman', Times, serif, sans-serif;
+width: 105px;
+cursor: pointer;
+margin-bottom: 10px; /* Spacing between buttons if stacked */
+}
+
+.button-label {
+font-size: 18px;
+margin-bottom: 10px; /* Space between the main label and the button */
+}
+
+.button-action {
+background-color: white;
+color: black;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.button-action:hover {
+background-color: grey; /* Change background color on hover */
+}
+.about-section-header{
+margin-top: 280px;
+font-size: xx-large;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.about-section-content{
+font-size: large;
+width: 600px; /* Set the width */
+height: auto; /* Set the height */
+
+
+padding: 20px; /* Add padding to create space inside the box */
+
+}
+.faq-awards-container {
+display: flex;
+width: 100%;
+height: auto;
+align-items: flex-start; /* Aligns items to the top of the container */
+justify-content: space-between;
+font-family: 'Times New Roman', Times, serif;
+font-weight: bold;
+background-color: #F1B82D;
+}
+
+.about-section-faq, .about-section-awards {
+font-size: large;
+flex: 1 1 50%;
+padding: 20px;
+box-sizing: border-box;
+}
+
+.section-title {
+text-align: center; /* Center-aligns the title */
+margin-bottom: 20px; /* Adds some space between the title and content */
+}
+
+.section-content {
+text-align: left; /* Left-aligns the content */
+}
+
+
+.about-section-awards {
+border-left: 2px solid black; /* Add a left border to awards section */
+}
+
+/* home style ends */
+/* home style ends */
+/* home style ends */
+/* home style ends */
+/* home style ends */
