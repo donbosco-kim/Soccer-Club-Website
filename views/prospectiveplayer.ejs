@@ -27,7 +27,8 @@
             font-size: 80px;
             text-align: left;
             height: 160px;
-            vertical-align: middle;           
+            vertical-align: middle;
+            padding-left: 20px;           
         }
         .signup-title {
             position: absolute;
@@ -48,7 +49,9 @@
             width: 1200px;
             height: 600px;
             margin: 0 auto;
-            position: relative;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
         .form-title {
             position: absolute;
@@ -61,12 +64,6 @@
         }
         .content {
             padding: 20px;
-        }
-        .form-group2 {
-            display: inline-block;
-            width: calc(50% - 10px);
-            margin-bottom: 20px;
-            margin-top: 50px;
         }
         .form-group {
             display: inline-block;
@@ -82,7 +79,7 @@
         .form-group input[type="email"],
         .form-group input[type="tel"],
         .form-group select {
-            width: 100%;
+            width: calc(100% - 16px);
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -119,11 +116,11 @@
     <div class="form-container">
         <div class="form-title">Mizzou Men's Club Soccer Recruiting Form</div>
         <form action="/signup" method="POST" id="signupForm">
-            <div class="form-group2">
+            <div class="form-group">
                 <label for="firstName">First Name:</label>
                 <input type="text" id="firstName" name="firstName" required>
             </div>
-            <div class="form-group2">
+            <div class="form-group">
                 <label for="lastName">Last Name:</label>
                 <input type="text" id="lastName" name="lastName" required>
             </div>
@@ -140,8 +137,8 @@
                 <input type="text" id="weight" name="weight" required>
             </div>
             <div class="form-group">
-                <label for="birthday">Birthday:</label>
-                <input type="date" id="birthday" name="birthday" required>
+                <label for="birthday">Birthday (MM/DD/YYYY):</label>
+                <input type="text" id="birthday" name="birthday" required>
             </div>
             <div class="form-group">
                 <label for="position">Position:</label>
@@ -157,29 +154,34 @@
         </form>
     </div>
 </section>
-
+    
 <script>
-    function enableSubmitBtn() {
-        document.getElementById('submitBtn').disabled = false;
-    }
-
-    function disableSubmitBtn() {
-        document.getElementById('submitBtn').disabled = true;
-    }
-
-    function onSubmit(token) {
-        enableSubmitBtn();
-    }
-
-    function validateCaptcha() {
-        const response = grecaptcha.getResponse();
-        if (response.length === 0) {
-            disableSubmitBtn();
-        } else {
-            enableSubmitBtn();
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById('signupForm');
+        const submitBtn = document.getElementById('submitBtn');
+    
+        function validateForm() {
+            const inputs = form.querySelectorAll('input[required]');
+            for (let i = 0; i < inputs.length; i++) {
+                if (!inputs[i].value) {
+                    return false;
+                }
+            }
+            return true;
         }
-    }
-</script>
+    
+        function handleFormValidation() {
+            if (validateForm()) {
+                submitBtn.removeAttribute('disabled');
+            } else {
+                submitBtn.setAttribute('disabled', 'disabled');
+            }
+        }
 
+        form.addEventListener('input', handleFormValidation);  
+        handleFormValidation();
+    });
+</script>
+    
 </body>
 </html>

@@ -7,6 +7,8 @@
     <style>
         body {
             font-family: 'Clarendon', serif;
+            margin: 0;
+            padding: 0;
         }
 
         .banner {
@@ -31,38 +33,65 @@
             vertical-align: middle;
         }
         .latest-news {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(495px, 1fr));
             gap: 20px;
             padding: 20px;
+            margin-top: 20px;
+            padding-left: 50px;
         }
-        .news-article {
-            width: 100%;
+        .main-article {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
             background-color: #f9f9f9;
-            padding: 10px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .main-article img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .main-article h2 {
+            color: #333;
+            font-size: 200%;
+        }
+        .main-article p {
+            color: #555;
+            font-size: 125%;
+        }
+        .main-article .author {
+            color: #777;
+        }
+        .news-article {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
         }
         .news-article img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
+            margin-bottom: 10px;
         }
         .news-article h2 {
             color: #333;
         }
         .news-article p {
-            margin-top: 10px;
             color: #555;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            font-size: 125%;
         }
         .news-article .author {
-            margin-top: 20px;
             color: #777;
-        }
-        .articles {
-            font-size: 50px;
-            padding-left: 25px;
-            padding-top: 15px;
         }
     </style>
 </head>
@@ -72,67 +101,79 @@
     <div class="news-strip">News</div>
 </header>
 
-<header class="articles">
-    <div class="articles">Articles</div>
-</header>
+<section class="main-article">
+    <h2>Main Placeholder Article</h2>
+    <img src="/images/placeholder.png" alt="placeholderImage">
+    <p class="author">Author: John Doe</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In nibh mauris cursus mattis molestie a iaculis. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Vestibulum lectus mauris ultrices eros in cursus. Morbi tristique senectus et netus et malesuada fames. Convallis convallis tellus id interdum velit laoreet id donec. Eros donec ac odio tempor orci dapibus ultrices. Ut enim blandit volutpat maecenas. Morbi non arcu risus quis. Sem fringilla ut morbi tincidunt augue. Facilisi nullam vehicula ipsum a arcu cursus. Eu augue ut lectus arcu bibendum at. Risus viverra adipiscing at in tellus integer. Vestibulum morbi blandit cursus risus. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Nulla pellentesque dignissim enim sit. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Et netus et malesuada fames ac. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.
+
+        Tellus molestie nunc non blandit massa enim nec. Mauris cursus mattis molestie a iaculis at erat. Commodo quis imperdiet massa tincidunt. Non pulvinar neque laoreet suspendisse interdum. Sit amet est placerat in. Sagittis eu volutpat odio facilisis. Quam pellentesque nec nam aliquam sem et tortor consequat id. Morbi leo urna molestie at. Porta lorem mollis aliquam ut porttitor. Eu turpis egestas pretium aenean pharetra magna ac placerat. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et.</p>
+        <p>Date: January 1, 2024</p>
+</section>
 
 <section class="latest-news">
     <div class="news-article">
         <h2>Placeholder Article 1</h2>
         <img src="/images/placeholder.png" alt="placeholderImage">
         <p>Date: January 1, 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In nibh mauris cursus mattis molestie a iaculis. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Vestibulum lectus mauris ultrices eros in cursus. Morbi tristique senectus et netus et malesuada fames. Convallis convallis tellus id interdum velit laoreet id donec. Eros donec ac odio tempor orci dapibus ultrices. Ut enim blandit volutpat maecenas. Morbi non arcu risus quis. Sem fringilla ut morbi tincidunt augue. Facilisi nullam vehicula ipsum a arcu cursus. Eu augue ut lectus arcu bibendum at. Risus viverra adipiscing at in tellus integer. Vestibulum morbi blandit cursus risus. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Nulla pellentesque dignissim enim sit. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Et netus et malesuada fames ac. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.
+
+            Tellus molestie nunc non blandit massa enim nec. Mauris cursus mattis molestie a iaculis at erat. Commodo quis imperdiet massa tincidunt. Non pulvinar neque laoreet suspendisse interdum. Sit amet est placerat in. Sagittis eu volutpat odio facilisis. Quam pellentesque nec nam aliquam sem et tortor consequat id. Morbi leo urna molestie at. Porta lorem mollis aliquam ut porttitor. Eu turpis egestas pretium aenean pharetra magna ac placerat. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et.</p>
         <p class="author">Author: John Doe</p>
     </div>
+
     <div class="news-article">
         <h2>Placeholder Article 1</h2>
         <img src="/images/placeholder.png" alt="placeholderImage">
         <p>Date: January 1, 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In nibh mauris cursus mattis molestie a iaculis. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Vestibulum lectus mauris ultrices eros in cursus. Morbi tristique senectus et netus et malesuada fames. Convallis convallis tellus id interdum velit laoreet id donec. Eros donec ac odio tempor orci dapibus ultrices. Ut enim blandit volutpat maecenas. Morbi non arcu risus quis. Sem fringilla ut morbi tincidunt augue. Facilisi nullam vehicula ipsum a arcu cursus. Eu augue ut lectus arcu bibendum at. Risus viverra adipiscing at in tellus integer. Vestibulum morbi blandit cursus risus. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Nulla pellentesque dignissim enim sit. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Et netus et malesuada fames ac. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.
+
+            Tellus molestie nunc non blandit massa enim nec. Mauris cursus mattis molestie a iaculis at erat. Commodo quis imperdiet massa tincidunt. Non pulvinar neque laoreet suspendisse interdum. Sit amet est placerat in. Sagittis eu volutpat odio facilisis. Quam pellentesque nec nam aliquam sem et tortor consequat id. Morbi leo urna molestie at. Porta lorem mollis aliquam ut porttitor. Eu turpis egestas pretium aenean pharetra magna ac placerat. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et.</p>
         <p class="author">Author: John Doe</p>
     </div>
+
     <div class="news-article">
         <h2>Placeholder Article 1</h2>
         <img src="/images/placeholder.png" alt="placeholderImage">
         <p>Date: January 1, 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In nibh mauris cursus mattis molestie a iaculis. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Vestibulum lectus mauris ultrices eros in cursus. Morbi tristique senectus et netus et malesuada fames. Convallis convallis tellus id interdum velit laoreet id donec. Eros donec ac odio tempor orci dapibus ultrices. Ut enim blandit volutpat maecenas. Morbi non arcu risus quis. Sem fringilla ut morbi tincidunt augue. Facilisi nullam vehicula ipsum a arcu cursus. Eu augue ut lectus arcu bibendum at. Risus viverra adipiscing at in tellus integer. Vestibulum morbi blandit cursus risus. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Nulla pellentesque dignissim enim sit. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Et netus et malesuada fames ac. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.
+
+            Tellus molestie nunc non blandit massa enim nec. Mauris cursus mattis molestie a iaculis at erat. Commodo quis imperdiet massa tincidunt. Non pulvinar neque laoreet suspendisse interdum. Sit amet est placerat in. Sagittis eu volutpat odio facilisis. Quam pellentesque nec nam aliquam sem et tortor consequat id. Morbi leo urna molestie at. Porta lorem mollis aliquam ut porttitor. Eu turpis egestas pretium aenean pharetra magna ac placerat. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et.</p>
         <p class="author">Author: John Doe</p>
     </div>
+
     <div class="news-article">
         <h2>Placeholder Article 1</h2>
         <img src="/images/placeholder.png" alt="placeholderImage">
         <p>Date: January 1, 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In nibh mauris cursus mattis molestie a iaculis. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Vestibulum lectus mauris ultrices eros in cursus. Morbi tristique senectus et netus et malesuada fames. Convallis convallis tellus id interdum velit laoreet id donec. Eros donec ac odio tempor orci dapibus ultrices. Ut enim blandit volutpat maecenas. Morbi non arcu risus quis. Sem fringilla ut morbi tincidunt augue. Facilisi nullam vehicula ipsum a arcu cursus. Eu augue ut lectus arcu bibendum at. Risus viverra adipiscing at in tellus integer. Vestibulum morbi blandit cursus risus. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Nulla pellentesque dignissim enim sit. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Et netus et malesuada fames ac. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.
+
+            Tellus molestie nunc non blandit massa enim nec. Mauris cursus mattis molestie a iaculis at erat. Commodo quis imperdiet massa tincidunt. Non pulvinar neque laoreet suspendisse interdum. Sit amet est placerat in. Sagittis eu volutpat odio facilisis. Quam pellentesque nec nam aliquam sem et tortor consequat id. Morbi leo urna molestie at. Porta lorem mollis aliquam ut porttitor. Eu turpis egestas pretium aenean pharetra magna ac placerat. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et.</p>
         <p class="author">Author: John Doe</p>
     </div>
+
     <div class="news-article">
         <h2>Placeholder Article 1</h2>
         <img src="/images/placeholder.png" alt="placeholderImage">
         <p>Date: January 1, 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In nibh mauris cursus mattis molestie a iaculis. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Vestibulum lectus mauris ultrices eros in cursus. Morbi tristique senectus et netus et malesuada fames. Convallis convallis tellus id interdum velit laoreet id donec. Eros donec ac odio tempor orci dapibus ultrices. Ut enim blandit volutpat maecenas. Morbi non arcu risus quis. Sem fringilla ut morbi tincidunt augue. Facilisi nullam vehicula ipsum a arcu cursus. Eu augue ut lectus arcu bibendum at. Risus viverra adipiscing at in tellus integer. Vestibulum morbi blandit cursus risus. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Nulla pellentesque dignissim enim sit. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Et netus et malesuada fames ac. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.
+
+            Tellus molestie nunc non blandit massa enim nec. Mauris cursus mattis molestie a iaculis at erat. Commodo quis imperdiet massa tincidunt. Non pulvinar neque laoreet suspendisse interdum. Sit amet est placerat in. Sagittis eu volutpat odio facilisis. Quam pellentesque nec nam aliquam sem et tortor consequat id. Morbi leo urna molestie at. Porta lorem mollis aliquam ut porttitor. Eu turpis egestas pretium aenean pharetra magna ac placerat. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et.</p>
         <p class="author">Author: John Doe</p>
     </div>
+
     <div class="news-article">
         <h2>Placeholder Article 1</h2>
         <img src="/images/placeholder.png" alt="placeholderImage">
         <p>Date: January 1, 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In nibh mauris cursus mattis molestie a iaculis. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Vestibulum lectus mauris ultrices eros in cursus. Morbi tristique senectus et netus et malesuada fames. Convallis convallis tellus id interdum velit laoreet id donec. Eros donec ac odio tempor orci dapibus ultrices. Ut enim blandit volutpat maecenas. Morbi non arcu risus quis. Sem fringilla ut morbi tincidunt augue. Facilisi nullam vehicula ipsum a arcu cursus. Eu augue ut lectus arcu bibendum at. Risus viverra adipiscing at in tellus integer. Vestibulum morbi blandit cursus risus. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Nulla pellentesque dignissim enim sit. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Et netus et malesuada fames ac. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.
+
+            Tellus molestie nunc non blandit massa enim nec. Mauris cursus mattis molestie a iaculis at erat. Commodo quis imperdiet massa tincidunt. Non pulvinar neque laoreet suspendisse interdum. Sit amet est placerat in. Sagittis eu volutpat odio facilisis. Quam pellentesque nec nam aliquam sem et tortor consequat id. Morbi leo urna molestie at. Porta lorem mollis aliquam ut porttitor. Eu turpis egestas pretium aenean pharetra magna ac placerat. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et.</p>
         <p class="author">Author: John Doe</p>
     </div>
-    <div class="news-article">
-        <h2>Placeholder Article 1</h2>
-        <img src="/images/placeholder.png" alt="placeholderImage">
-        <p>Date: January 1, 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <p class="author">Author: John Doe</p>
-    </div>
-    <div class="news-article">
-        <h2>Placeholder Article 1</h2>
-        <img src="/images/placeholder.png" alt="placeholderImage">
-        <p>Date: January 1, 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <p class="author">Author: John Doe</p>
-    </div>
+
+    <!-- Repeat the news-article divs for other articles -->
+
 </section>
 
 </body>
