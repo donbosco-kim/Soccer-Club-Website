@@ -3,10 +3,10 @@ const app = express();
 const port = 3000;
 const expressLayouts = require("express-ejs-layouts");
 const expressStatic = require("express-static");
-const logger = require('morgan');
-const passport = require('passport');
-const session = require('express-session');
-const SQLiteStore = require('connect-sqlite3')(session);
+const logger = require("morgan");
+const passport = require("passport");
+const session = require("express-session");
+const SQLiteStore = require("connect-sqlite3")(session);
 const player = require("./models/players_db");
 const coach = require("./models/coach_db");
 const user = require("./models/users");
@@ -16,17 +16,17 @@ app.set("layout", "./layouts/layout");
 app.set("view engine", "ejs");
 
 //middleware to parse form data
-app.use(logger('dev'));
+app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
-  secret: 'cigaratte',
+  secret: "cigaratte",
   resave: false,
   saveUninitialized: false,
-  store: new SQLiteStore({ db: 'sessions.db', dir: '/Users/leonbosco/Desktop/Sqlite-Mizzou-SoccerDB/' })
+  store: new SQLiteStore({ db: "sessions.db", dir: "./var/db" })
 }));
-app.use(passport.authenticate('session'));
+app.use(passport.authenticate("session"));
 
 //routes
 app.get("", (req, res) => {

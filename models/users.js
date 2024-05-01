@@ -1,21 +1,8 @@
 // import necessary modules
-const sqlite3 = require("sqlite3").verbose();
+const db = require("./db");
 const crypto = require("crypto");
-const passport = require('passport');
+const passport = require("passport");
 const LocalStrategy = require('passport-local');
-
-// Function to open a connection to the database file
-function getDbConnection() {
-  // Connecting to the database
-  let db = new sqlite3.Database("/Users/leonbosco/Desktop/Sqlite-Mizzou-SoccerDB/mizzousoccerdatabase.db",sqlite3.OPEN_READWRITE, (err) => {
-      if (err) {
-        console.error("You got this", err.message);
-      }else {
-        console.log("Connected to the database.");
-      }
-    });
-    return db; // Return the database connection
-}
 
 function hashPassword(password, salt, callback){
   crypto.pbkdf2(password, salt, 310000, 32, 'sha256', (err, hashedPassword) => {
@@ -27,7 +14,7 @@ function hashPassword(password, salt, callback){
 }
 
 function createUser(username, email, password, callback) {
-  let db = getDbConnection();
+  //let db = getDbConnection();
   let salt = crypto.randomBytes(16);
 
   hashPassword(password, salt, (err, hashedPassword) => {
@@ -71,7 +58,7 @@ passport.deserializeUser(function(user, cb) {
 });
 
 function getUser(username, password, cb) {
-  let db = getDbConnection();
+  //let db = getDbConnection();
   let sql = 'SELECT * FROM Users WHERE username = ?';
   db.get(sql, [username], function(err, row) {
       if (err) {
