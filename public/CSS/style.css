@@ -27,7 +27,7 @@ a:focus {
 
 .container:after {
   content: " ";
-  display: table;
+  /* display: table; */
   clear: both;
 }
 
@@ -226,16 +226,8 @@ a:focus {
   text-align: center;
 }
 
-table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 1200px; /*table width*/
-}
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+
+
 tr:nth-child(even) {
   background-color: #dddddd;
 }
@@ -329,6 +321,72 @@ tr:nth-child(even) {
   float: right;
 }
 
+/* player.ejs style */
+
+h1 {
+  background-color: #f1b82d;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 10px;
+  size-adjust: 100px;
+  }
+  
+  table {
+    font-family: times;
+    border-collapse: collapse;
+    border-spacing: 10px;
+    width: 100%;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    margin-left: 10px;
+    margin-top: 20px;
+      border-collapse: separate;  /* Ensures that spacing is possible */
+      border-spacing: 0 10px;  
+  }   
+  
+  td, th {
+   
+    text-align: center;
+    padding: 8px;
+    background-color: white;
+  }
+  
+  .number {
+  background-color: black;
+  color: white;
+  }
+  .name {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-weight: bolder;
+      font-size: x-large;
+  }
+  
+  th {
+  border-bottom: 1px solid;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .section{
+  display: flex;
+  width: auto;
+  
+  }
+  
+  .buttons button {
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      margin: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: larger;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  .buttons button:hover {
+      background-color: grey;
+  }
 
 
 
