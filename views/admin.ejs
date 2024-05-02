@@ -10,16 +10,16 @@
 <body>
     <div class="wrapper">
         <div class="sidebar">
-            <a class="active" href="#">Home</a> <!--Empty for now-->
+            <a class="active" href="#">Home</a> <!--Empty for now -->
             <a href="/addplayer">New Player</a>
             <a href="/addcoach">New Coach</a>
             <div class="dropup">
-                <button onclick="myFunction()" class="dropbtn">UserName</button>
+                <button onclick="myFunction()" class="dropbtn"><%= user.username %></button>
                 <div id="myDropup" class="dropup-content">
-                    <a href="#">User-Email</a>
+                    <p><%= user.email %></p>
                     <a href="#">Settings</a>
-                    <a><form action="/logout" method="post">
-                        <button type="submit">Sign out</button></form></a>
+                    <form action="/logout" method="post">
+                        <button type="submit">Sign out</button></form>
                 </div>
             </div>
         </div>

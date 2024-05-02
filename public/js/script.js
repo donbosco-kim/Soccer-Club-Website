@@ -51,6 +51,17 @@ window.onclick = function(event) {
   }
 }
 
+$(document).ready(function() {
+  // Add click event listener to sidebar links
+  $(".sidebar a").click(function() {
+      // Remove active class from all links
+      $(".sidebar a").removeClass("active");
+      // Add active class to the clicked link
+      $(this).addClass("active");
+  });
+});
+
+
 //prospective player script
 function enableSubmitBtn() {
   document.getElementById('submitBtn').disabled = false;

@@ -58,15 +58,23 @@ app.post("/login", (req, res) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Error authenticating user");
-    }else if (!user) {
+    } else if (!user) {
       // Authentication failed
       return res.status(401).send("Incorrect username or password");
-    }else {
-      // Authentication successful, redirect to the homepage or dashboard
-      res.redirect("/admin");
+    } else {
+      // Authentication successful, render the admin page with user data
+      res.render("admin", { user: user, layout: false });
     }
   });
 });
+
+app.post('/logout', function(req, res, next) {
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
+});
+
 // Route for user signup
 app.post("/signup", (req, res) => {
   const { username, email, password, confirmPassword } = req.body;

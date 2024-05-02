@@ -59,8 +59,16 @@ div.content {
     text-decoration: none;
     display: block;
   }
-  
+  button {
+    width: 200px;
+  }
+  .dropup-content button {
+    color: black;
+    padding: 12px 16px;
+    cursor: pointer;
+  }
   .dropup-content a:hover {background-color: #ccc}
+  .dropup-content button:hover {background-color: #ccc}
 
 
   .show {display: block;}
