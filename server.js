@@ -11,6 +11,12 @@ const player = require("./models/players_db");
 const coach = require("./models/coach_db");
 const user = require("./models/users");
 
+const dotenv = require('dotenv');
+const result = dotenv.config();
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+const mg = require('nodemailer-mailgun-transport');
+
 app.use(expressLayouts);
 app.set("layout", "./layouts/layout");
 app.set("view engine", "ejs");
@@ -30,6 +36,9 @@ app.use(passport.authenticate("session"));
 
 //routes
 app.get("", (req, res) => {
+  res.render("home", { title: "Home Page", layout: "./layouts/layout" });
+});
+app.get("/home", (req, res) => {
   res.render("home", { title: "Home Page", layout: "./layouts/layout" });
 });
 
@@ -124,9 +133,54 @@ app.get("/coach", (req, res) => {
   });
 });
 
+//mailScript
+const auth = {
+  auth: {
+      api_key: process.env.MAILGUN_API_KEY,
+      domain: process.env.MAILGUN_DOMAIN
+  }
+};
+
+const transporter = nodemailer.createTransport(mg(auth));
+
+app.get('/', (req, res) => {
+  res.render('contact');
+});
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/submit_form', (req, res) => {
+  const { Contact_First_Name, Contact_Last_Name, Contact_Email, Contact_Message } = req.body;
+
+  const mailOptions = {
+      from: 'postmaster@sandboxc49d23903a8c419e98c55383f173155c.mailgun.org',
+      to: 'testmensmusoccer@gmail.com',
+      subject: 'Contact Form Submission',
+      text: `First Name: ${Contact_First_Name}\nLast Name: ${Contact_Last_Name}\nEmail: ${Contact_Email}\nMessage: ${Contact_Message}`
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          console.log(error);
+          res.send('Error: Something went wrong.');
+      } else {
+          console.log('Email sent: ' + info.response);
+          res.send('Message sent successfully!');
+      }
+  });
+});
+
 app.get("/news", (req, res) => {
   res.render("news", { title: "News Page", layout: "./layouts/layout" });
 });
+
+app.get("/calendar", (req, res) => {
+  res.render("calendar", { title: "Calendar Page", layout: "./layouts/layout" });
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact', {title: 'Contact Page', layout: './layouts/layout'})
+})
 
 app.get("/prospectiveplayer", (req, res) => {
   res.render("prospectiveplayer", {
@@ -137,6 +191,7 @@ app.get("/prospectiveplayer", (req, res) => {
 
 //static files
 app.use(express.static("public"));
-app.use("/css", express.static(__dirname + "../public/CSS/style.css"));
+app.use("/css", express.static(__dirname + "../public/CSS"));
+//app.use("/css", express.static(__dirname + "../public/CSS/contact.css"));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

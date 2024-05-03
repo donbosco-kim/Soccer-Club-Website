@@ -126,121 +126,225 @@ a:focus {
 }
 
 /*Header style end*/
+
 /*home style*/
-.homepage-section-container {
-  margin-left: auto; /* Center the container horizontally */
-  margin-right: auto; /* Center the container horizontally */
-  width: fit-content; /* Ensure container width fits its content */
-}
-
-.homepage-section-container img {
-  display: block; /* The image is treated as a block element */
-  margin: 0 auto; /* Center the image horizontally within its container */
-  width: 1100px; /*set img width & height */
-  height: 600px;
-}
-.homepage-section2-container {
+.schedule-section {
   display: flex;
-  justify-content: space-between; /* Ensure equal space between columns */
-  margin-top: 20px;
-  margin-left: 40px;
-  margin-right: 40px;
+  justify-content: space-between; /* For even spacing */
+  padding: 10px; /* Adjust as needed */
+  background-color: #F1B82D; /* Yellow background */
+  font-weight: bold;
+  width: 98.61%;
+  height: auto;
+  padding-bottom: 80px;
+ 
 }
 
-.column {
-  flex: 1; /* Equal width for both columns */
+.match-card {
+  flex: 1;
+  background-color: transparent; /* Yellow background */
   padding: 20px;
-  background-color: #f2f2f2; /* background color */
-  border-radius: 8px; /* border radius */
+  margin: 10px 0;
+  box-sizing: border-box;
+  position: relative; /* Needed for absolute positioning */
 }
 
-.column h2 {
-  text-align: center; /* Center-align heading */
-  margin-bottom: 15px; /* margin */
-}
-.column + .column {
-  margin-left: 20px; /* Space between columns */
-}
-
-/* Styles for the Results column */
-
-.result-info {
-  display: flex;
-  flex-direction: column; /* Arrange date-time and team info vertically */
-  border: 1px solid #ccc;
-  margin-bottom: 20px; /* Add margin between result items */
+.match-date {
+  text-align: left;
+  margin-bottom: 0px; /* Space below the date */
+  margin-left: -6px;
+  font-size: medium;
 }
 
-.date-time-info {
-  display: flex;
-  justify-content: space-between; /* Align date and time at start and end */
-  align-items: center; /* Center vertically */
-  padding: 10px;
-}
-
-.date-info,
-.time-info {
-  text-align: center;
-  flex: 1; /* Equal width for date and time */
-}
-
-.team-info {
+.match-details {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.team-info img {
-  max-width: 50px;
-}
-/* Styles for the Upcoming Matches column */
-.match {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
+  align-items: left;
+  padding-left: 20px; /* Align with the vertical line */
+  font-size: small;
 }
 
 .match-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: left;
+  margin-right: 40px;
+  margin-left: -20px;
 }
 
 .match-time {
+  font-size: smaller;
+  text-align: right;
+  margin-left: 10px;
+}
+
+/* The vertical line */
+.match-card::before {
+  content: '';
+  position: absolute;
+  left: 15px; /* Aligns with the padding of match-details */
+  top: 45px;
+  bottom: 5px;
+  width: 1px; /* Thin line */
+  background-color: grey;
+}
+
+/* The horizontal line */
+.match-details::after {
+  content: '';
+  position: absolute;
+  left: 24px; /* Align with the padding of match-details */
+  right: 20px; /* Spacing from the right */
+  top: 50%; /* Position it after the "Regular Season" and "7:30pm" */
+  border-top: 1px solid grey;
+}
+
+.match-teams {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px; /* Spacing from the horizontal line */
+  margin-left: 20px;
+  font-size: small;
+
 }
 
-.teams {
-  text-align: center;
-}
-
-.homepage-section3-container {
-  margin-left: auto; /* Center the container horizontally */
-  margin-right: auto; /* Center the container horizontally */
-  width: fit-content; /* Ensure container width fits its content */
-}
-.homepage-section3-container h2 {
-  text-align: center;
-}
-
-table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 1200px; /*table width*/
-}
-td, th {
-  border: 1px solid #dddddd;
+.team {
   text-align: left;
-  padding: 8px;
 }
-tr:nth-child(even) {
-  background-color: #dddddd;
+
+.location {
+  text-align: left;
+  position: absolute;
+  left: 20px;
+  bottom: 0px;
+  font-size: small;
+}
+#main-content {
+  padding: 20px; /* Adds padding inside the section for spacing */
+  background-color: #ffffff; /* White background for main content area */
+  color: #333; /* Dark text for better readability */
+  font-size: 16px; /* Set a reasonable font size */
+  margin-top: 20px; /* Adds space above the section */
+  
+}
+#overlay-image {
+position: absolute;  /* Absolutely position the image */
+bottom: 100%;  /* Position it at the bottom of the main-content section */
+left: 50%;  /* Center the image horizontally */
+transform: translate(-110%, 200%);  /* Adjust positioning to center and move up */
+width: 41%;  /* Adjust width as needed */
+height: auto;  /* Adjust height as needed */
+z-index: 10;  /* Ensure it's above other content */
+box-shadow: 0 0 8px rgba(0,0,0,0.4); /* Subtle fading border effect */
+border-radius: 5px;
+
+}
+#overlay-image2 {
+position: absolute;  /* Absolutely position the image */
+bottom: 100%;  /* Position it at the bottom of the main-content section */
+left: 50%;  /* Center the image horizontally */
+transform: translate(50%, 247%);  /* Adjust positioning to center and move up */
+width: 30%;  /* Adjust width as needed */
+height: auto;  /* Adjust height as needed */
+z-index: 10;  /* Ensure it's above other content */
+
+
+}
+.positioning-container {
+position: relative;
+height: 100%; /* Example height */
+width: 100%; /* Example width */
+}
+.button-container {
+position: absolute;
+top: 50%;  /* Center vertically */
+left: 50%; /* Center horizontally */
+transform: translate(0%, -20%); /* Adjust to center exactly */
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+
+.box-button {
+float:right;
+background-color: black;
+color: white;
+padding: 20px;
+text-align: left;
+border-radius: 10px;
+font-family: 'Times New Roman', Times, serif, sans-serif;
+width: 105px;
+cursor: pointer;
+margin-bottom: 10px; /* Spacing between buttons if stacked */
+}
+
+.button-label {
+font-size: 18px;
+margin-bottom: 10px; /* Space between the main label and the button */
+}
+
+.button-action {
+background-color: white;
+color: black;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.button-action:hover {
+background-color: grey; /* Change background color on hover */
+}
+.about-section-header{
+margin-top: 280px;
+font-size: xx-large;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.about-section-content{
+font-size: large;
+width: 600px; /* Set the width */
+height: auto; /* Set the height */
+
+
+padding: 20px; /* Add padding to create space inside the box */
+
+}
+.faq-awards-container {
+display: flex;
+width: 100%;
+height: auto;
+align-items: flex-start; /* Aligns items to the top of the container */
+justify-content: space-between;
+font-family: 'Times New Roman', Times, serif;
+font-weight: bold;
+background-color: #F1B82D;
+}
+
+.about-section-faq, .about-section-awards {
+font-size: large;
+flex: 1 1 50%;
+padding: 20px;
+box-sizing: border-box;
+}
+
+.section-title {
+text-align: center; /* Center-aligns the title */
+margin-bottom: 20px; /* Adds some space between the title and content */
+}
+
+.section-content {
+text-align: left; /* Left-aligns the content */
+}
+
+
+.about-section-awards {
+border-left: 2px solid black; /* Add a left border to awards section */
 }
 /*home style end*/
 
+/* prospectiveplayer.ejs */
 .banner {
   background-color: #333;
   color: #fff;
@@ -265,7 +369,7 @@ tr:nth-child(even) {
   border-radius: 8px;
   padding: 20px;
   width: 1200px;
-  height: 600px;
+  height: 500px;
   margin: 0 auto;
   position: relative;
 }
@@ -278,8 +382,9 @@ tr:nth-child(even) {
   font-weight: bold;
   padding-bottom: 10px;
 }
-.content {
+.form-content {
   padding: 20px;
+  margin-bottom: -160px;
 }
 .form-group2 {
   display: inline-block;
@@ -329,6 +434,155 @@ tr:nth-child(even) {
   float: right;
 }
 
+/* news CSS */
+.news-banner {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+}
+.news-strip {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 80px;
+  text-align: left;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+.latest-news {
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  padding-left: 50px;
+}
+.main-article {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.main-article img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.main-article h2 {
+  color: #333;
+  font-size: 200%;
+}
+.main-article p {
+  color: #555;
+  font-size: 125%;
+}
+.main-article .author {
+  color: #777;
+}
+.news-article {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+.news-article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.news-article h2 {
+  color: #333;
+}
+.news-article p {
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 125%;
+}
+.news-article .author {
+  color: #777;
+}
+
+.latest-news {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.news-article {
+  width: calc(50% - 20px);
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.latest-news {
+  width: 100%;
+  background-color: white;
+  padding-top: 1.5in;
+}
+
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5in;
+  background-color: black;
+  color: white;
+  text-align: left;
+  line-height: 1.5in;
+}
+
+.news-article {
+  width: 30%;
+  display: inline-block;
+  margin: 1.5% 1%;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+.news-article h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.news-article p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.news-article .cover-photo {
+  width: 100%;
+  height: auto;
+}
+
+.news-article .date {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.news-article .author {
+  font-size: 14px;
+  color: #888;
+}
+
+
 /* player.ejs style */
 
 h1 {
@@ -337,7 +591,6 @@ h1 {
   color: black;
   font-family: "Times New Roman", Times, serif;
   padding-left: 10px;
-  size-adjust: 100px;
 }
 
 table {
@@ -345,7 +598,6 @@ table {
   border-collapse: collapse;
   border-spacing: 10px;
   width: 100%;
-
   margin-left: 10px;
   margin-top: 20px;
   border-collapse: separate; /* Ensures that spacing is possible */
@@ -398,3 +650,136 @@ th {
 .buttons button:hover {
   background-color: grey;
 } 
+
+.calendar-header {
+  background-color: #F1B82D; 
+  color: black;
+  text-align: left; 
+  padding: 1px 0; 
+  font-size: 20px; 
+  padding-left: 60px;
+  margin-bottom: 2;
+}
+
+.calendar-container {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  padding: 20px; 
+}
+
+.month{
+
+    top: 20px; 
+    left: 10px; 
+    color: black; 
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-bottom: -40px;
+    margin-left: 20px;
+}
+
+
+/*Contact Form*/
+@font-face {
+  font-family: 'Clarendon'; /* Specify the name of your font family */
+  src: url('39694_URWClarendonT.ttf') format('ttf')
+}
+
+/* .title-contact {
+  font-family: 'Clarendon', sans-serif;
+  padding-left: 3%;
+  padding-top: 1px;
+  color: white;
+  background-color: black;
+  height: 200px;
+  font-size: 40px;
+  margin-bottom: 20px;
+} */
+
+.container-contact {
+  display: flex; 
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: -25px;
+}
+
+
+.form-container-contact {
+  width: 35%;
+  margin-right: 20px;
+  border: 2px solid #7D7D7D;
+  border-radius: 10px; 
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group-contact {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-contact {
+  width: 100px;
+  height: auto; 
+  padding-top: 10px;
+}
+
+@font-face {
+  font-family: 'OpenSans'; /* Specify the name of your font family */
+  src: url('OpenSans-Italic-VariableFont_wdth,wght.ttf') format('ttf')
+}
+
+.form-group-contact label {
+  font-weight: bold;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.form-group-contact input[type="text"],
+.form-group-contact input[type="email"],
+.form-group-contact textarea {
+  width: calc(100% - 20px);
+  padding: 8px;
+  border: 1px solid #D7D7D7;
+  border-radius: 4px;
+  background-color: #D7D7D7;
+  resize: none;
+}
+
+button[type="submit"] {
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #F1B82D;
+}
+
+/* footer */
+#footer-wrapper{
+  text-align: center;
+  margin-top: 150px;
+}
+
+footer {
+text-align:left;
+padding: 30px;
+background-color: grey;
+color: black;
+}
