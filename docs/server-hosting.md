@@ -86,3 +86,12 @@ npm install
 ```
 node server.js
 ```
+### Install PM2
+```
+npm install -g pm2
+```
+### Start Your Web Application With pm2
+```
+pm2 start server.js --name=Nodejs-ssl-server (this name should be your instance name in AWS that you give)
+```
+### Install Nginx Web Server

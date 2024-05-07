@@ -16,6 +16,7 @@ const result = dotenv.config();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const mg = require('nodemailer-mailgun-transport');
+const { EMPTY } = require("sqlite3");
 
 app.use(expressLayouts);
 app.set("layout", "./layouts/layout");
@@ -115,6 +116,24 @@ app.get("/player", (req, res) => {
       });
     }
   });
+});
+
+app.post("/addplayer", (req, res) => {
+  const {firstname, lastname, position, jerseynumber, _class, major, bio} = req.body;
+  if (!firstname || !lastname || !position || !jerseynumber || !_class || !major || !bio) {
+    console.log("Please fill up all the fields");
+    res.redirect("/addplayer");
+  } else {
+    player.createPlayer(firstname, lastname, position, jerseynumber, _class, major, bio, (err, playerId) => {
+      if (err) {
+        console.error(err);
+        //res.redirect("/error");
+      } else {
+        console.log("Player successfully added with ID:", playerId);
+        res.redirect("/admin");
+      }
+    });
+  }
 });
 
 app.get("/coach", (req, res) => {

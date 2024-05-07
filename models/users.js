@@ -30,7 +30,7 @@ function createUser(username, email, password, callback) {
               callback(err);
           } else {
               console.log("User successfully added");
-              db.close();
+              //db.close();
               callback(null, this.lastID);
           }
       });

@@ -15,8 +15,22 @@ function getAllPlayers(callback) {
       }
   });
 }
+//id, firstname, lastname, position, jerseynumber, class, major, bio
+function createPlayer(firstname, lastname, position, jerseynumber, _class, major, bio, callback) {
+  let sql = 'INSERT INTO Players (firstname, lastname, position, jerseynumber, class, major, bio) VALUES (?,?,?,?,?,?,?)';
+  db.run(sql, [firstname, lastname, position, jerseynumber, _class, major, bio], function(err) {
+    if (err) {
+      console.error(err.message);
+      callback(err);
+    } else {
+      console.log("Player successfully added");
+      callback(null, this.lastID);
+    }
+  });
+}
 
 // Export the getAllPlayers function
 module.exports = {
-  getAllPlayers: getAllPlayers
+  getAllPlayers: getAllPlayers,
+  createPlayer: createPlayer
 };
